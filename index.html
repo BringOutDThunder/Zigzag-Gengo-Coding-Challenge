@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code Challenge Exam</title>
+	<script src="scripts/angular.js"></script>
+	<!--<script src="scripts/angular.min.js"></script>-->
+	<script src="scripts/scripts.js"></script>
+</head>
+<body ng-app="codeChallengeModule">
+	<div ng-controller="levelOneController">
+		<input type="text" ng-model="inputOne" /><br />
+		<span> {{ outputOne }} </span>
+	</div>
+	<br /><br />
+	
+	<div ng-controller="levelTwoController">
+		<input type="text" ng-model="inputTwo" /><br />
+		<span> {{ outputTwo }} </span>
+	</div>
+	<br /><br />
+	
+	<div ng-controller="levelThreeController">
+		<input type="text" ng-model="inputThree" /><br />
+		<span> {{ outputThree }} </span>
+	</div>
+	<br /><br />
+</body>
