@@ -84,5 +84,22 @@ Level 3 : function [getMinimumCut]
 	
 ----------------------------------------------------
 	
+*********************************************************************************	
+
+Experience and Feedback:
+
+The test was challenging but is also enjoyable. I'm kind of a bit lazy so I added plugins such as jQuery, bootstrap, angularjs to make me feel at ease while coding especially during the design part. I could have done it with a backend code but I see that the test can be answered just by front-end coding.
+
+It took me about 8 hrs to complete all this including this one that you're reading. 
+
+Probably 40% of thinking
+	, 10% of logic coding
+	, 20% hr of debugging
+	, 10% hr of designing
+	, 20 hrs of documenting
+
+----------------------------------------------------
+
+
 Created by: leeroquebudaden@gmail.com 
 Date Created: 2020-OCT-18
