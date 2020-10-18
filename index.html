@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Code Challenge Exam</title>
-	<script src="scripts/angular.js"></script>
-	<!--<script src="scripts/angular.min.js"></script>-->
-	<script src="scripts/scripts.js"></script>
-</head>
-<body ng-app="codeChallengeModule">
-	<div ng-controller="levelOneController">
-		<input type="text" ng-model="inputOne" /><br />
-		<span> {{ outputOne }} </span>
-	</div>
-	<br /><br />
-	
-	<div ng-controller="levelTwoController">
-		<input type="text" ng-model="inputTwo" /><br />
-		<span> {{ outputTwo }} </span>
-	</div>
-	<br /><br />
-	
-	<div ng-controller="levelThreeController">
-		<input type="text" ng-model="inputThree" /><br />
-		<span> {{ outputThree }} </span>
-	</div>
-	<br /><br />
-</body>
+	<head>
+		<title>Code Challenge Exam</title>
+		<script src="scripts/jquery-3.4.1.min.js"></script>
+		<script src="scripts/bootstrap.min.js"></script>
+		<script src="scripts/angular.min.js"></script>
+		<script src="scripts/scripts.js"></script>
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/styles.css">
+	</head>
+	<body ng-app="codeChallengeModule">
+		<div id="main-container" class="panel panel-primary" ng-controller="codeChallengeController">
+			<div class="panel-heading">
+				<h4>Fun with Palindromes</h4>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label>Palindrome (<i>noun</i>) is a word, phrase, or sequence that reads the same backwards as forwards, e.g. <i>madam</i> or <i>nurses run</i>.</label>
+				</div>
+				<div class="form-group">
+					<label for="levelOne">Level 1: Enter a text and it will return true if it's a palindrome, otherwise false.</label>
+					<input type="text" class="form-control" id="levelOne" ng-model="inputOne" ng-change="checkPalindrome()" /><br />
+					<div class="alert alert-success">
+						<strong> {{ outputOne }} </strong>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="levelTwo">Level 2: Enter a text and it will return the longest palindrome of it.</label>
+					<input type="text" class="form-control" id="levelTwo" ng-model="inputTwo" ng-change="getLongestPalindrome()" /><br />
+					<div class="alert alert-info">
+						<strong> {{ outputTwo }} </strong>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="levelThree">Level 3: Enter a text and it will return the least cut with the list of palindromes.</label>
+					<input type="text" class="form-control" id="levelTwo" ng-model="inputThree" ng-change="getMinimumCut()" /><br />
+					<div class="alert alert-danger">
+						<strong> {{ outputThree }} </strong>
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer">
+				Created by: leeroquebudaden@gmail.com
+			</div>
+		</div>
+	</body>
+</html>

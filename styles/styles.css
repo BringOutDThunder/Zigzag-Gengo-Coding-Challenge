@@ -1,0 +1,13 @@
+body {
+	display: block;
+	left: 0;
+	top: 0;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+#main-container{
+	width: 500px !important;
+	display: block !important;
+	margin: auto;
+}
