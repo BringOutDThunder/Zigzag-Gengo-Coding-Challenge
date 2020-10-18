@@ -20,7 +20,7 @@
 				</div>
 				<div class="form-group">
 					<label for="levelOne">Level 1: Enter a text and it will return true if it's a palindrome, otherwise false.</label>
-					<input type="text" class="form-control" id="levelOne" ng-model="inputOne" ng-change="checkPalindrome()" /><br />
+					<input type="text" maxlength="50" class="form-control" id="levelOne" ng-model="inputOne" ng-change="checkPalindrome()" /><br />
 					<div class="alert alert-success">
 						<strong> {{ outputOne }} </strong>
 					</div>
@@ -28,7 +28,7 @@
 
 				<div class="form-group">
 					<label for="levelTwo">Level 2: Enter a text and it will return the longest palindrome of it.</label>
-					<input type="text" class="form-control" id="levelTwo" ng-model="inputTwo" ng-change="getLongestPalindrome()" /><br />
+					<input type="text" maxlength="50" class="form-control" id="levelTwo" ng-model="inputTwo" ng-change="getLongestPalindrome()" /><br />
 					<div class="alert alert-info">
 						<strong> {{ outputTwo }} </strong>
 					</div>
@@ -36,7 +36,7 @@
 
 				<div class="form-group">
 					<label for="levelThree">Level 3: Enter a text and it will return the least cut with the list of palindromes.</label>
-					<input type="text" class="form-control" id="levelTwo" ng-model="inputThree" ng-change="getMinimumCut()" /><br />
+					<input type="text" maxlength="50" class="form-control" id="levelTwo" ng-model="inputThree" ng-change="getMinimumCut()" /><br />
 					<div class="alert alert-danger">
 						<strong> {{ outputThree }} </strong>
 					</div>
@@ -44,6 +44,8 @@
 			</div>
 			<div class="panel-footer">
 				Created by: leeroquebudaden@gmail.com
+				<br />
+				Date Created: 2020-OCT-18
 			</div>
 		</div>
 	</body>

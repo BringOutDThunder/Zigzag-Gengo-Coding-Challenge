@@ -6,11 +6,17 @@ var codeChallengeModule = angular.module("codeChallengeModule", []);
 codeChallengeModule.controller("codeChallengeController", function($scope) {
 	$scope.inputOne = "";
 	$scope.outputOne = "";
+	var notPalindrome = "false // it's not written the same forward and backward";
 
 	//Level 1
 	$scope.checkPalindrome = function () {
 		if ($scope.inputOne.length > 0) {
-			$scope.outputOne = $scope.palindromeChecker($scope.inputOne);
+			var isPalindrome = $scope.palindromeChecker($scope.inputOne);
+			if(isPalindrome) {
+				$scope.outputOne = "true // it's written the same forward and backward";
+			} else {
+				$scope.outputOne = notPalindrome
+			}
 		} else{
 			$scope.outputOne = "";
 		}
@@ -35,18 +41,24 @@ codeChallengeModule.controller("codeChallengeController", function($scope) {
 		var input = $scope.inputThree;
 		var palindromes = [];
 
-		if ($scope.palindromeChecker(input)) {
-			$scope.outputThree = "0 | " + input;
+		if(input.length > 0) {
+			if ($scope.palindromeChecker(input)) {
+				$scope.outputThree = "0 // " + input;
+			} else {
+				palindromes = $scope.palindromeSplicer(input, palindromes);
+				$scope.outputThree = (palindromes.length - 1) + " // " + palindromes.join(" | ");
+			}
+		} else{
+			$scope.outputThree = "";
 		}
-		else {
-			palindromes = $scope.palindromeSplicer(input, palindromes);
-			$scope.outputThree = (palindromes.length - 1) + " | " + palindromes.join(" | ");
-        }
 	}
 
 	//Shared Functions
 	$scope.palindromeSplicer = function (input, palindromes) {
-		if ($scope.palindromeChecker(input)) {
+		if(input.length < 1){
+			return palindromes;
+		}
+		else if ($scope.palindromeChecker(input)) {
 			palindromes.push(input);
 			return palindromes;
 		} else {
@@ -69,7 +81,8 @@ codeChallengeModule.controller("codeChallengeController", function($scope) {
 
 						if ($scope.palindromeChecker(palindromeTest)) {
 							palindromes.push(palindromeTest);
-							palindromes = $scope.palindromeSplicer(input.substring(0, i) + input.substring((input.length - iDivider) + i, input.length), palindromes);
+							palindromes = $scope.palindromeSplicer(input.substring(0, i), palindromes);
+							palindromes = $scope.palindromeSplicer(input.substring((input.length - iDivider) + i, input.length), palindromes);
 							cutComplete = true;
 							break;
 						}
